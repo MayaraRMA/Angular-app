@@ -1,0 +1,76 @@
+<div class="container">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="row bg-dark text-white p-5">
+        <h3 class="mx-auto font-weight-normal">Cadastro</h3>
+    </div>
+    <div class="row bg-primary text-white p-5">
+      <div class="form-grop col-md-8 mb-1">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control bg-secondary text-white" 
+        id="nome" name="nome" [(ngModel)]="cliente.nome" 
+        required #nome="ngModel"
+        [class.is-invalid]="!nome.valid && nome.touched">
+        <div *ngIf="!nome.valid && nome.touched" class="invalid-feedback">
+          Nome e obrigatorio
+        </div>
+      </div >
+    
+      <div class="form-grop col-md-4 mb-1">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control bg-secondary text-white" 
+        id="cep" name="cep" [(ngModel)]="cliente.cep" 
+        required #cep="ngModel"
+        [class.is-invalid]="!cep.valid && cep.touched"
+        (blur)="consultaCEP($event.target.value)">
+        <div *ngIf="!cep.valid && cep.touched" class="invalid-feedback">
+          CEP e obrigatorio
+        </div>
+      </div>
+  
+      <div class="form-grop col-md-5 mb-1">
+        <label for="estado">Estado</label>
+        <input type="text" class="form-control bg-secondary text-white" 
+        id="estado" name="estado" [(ngModel)]="cliente.estado" 
+        required #estado="ngModel"
+        [class.is-invalid]="!estado.valid && estado.touched">
+        <div *ngIf="!estado.valid && estado.touched" class="invalid-feedback">
+          Estado e obrigatorio
+        </div>
+      </div>
+    
+      <div class="form-grop col-md-7 mb-1">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control bg-secondary text-white" 
+        id="cidade" name="cidade" [(ngModel)]="cliente.cidade" 
+        required #cidade="ngModel"
+        [class.is-invalid]="!cidade.valid && cidade.touched">
+        <div *ngIf="!cidade.valid && cidade.touched" class="invalid-feedback">
+          Cidade e obrigatorio
+        </div>
+      </div>
+    
+      <div class="form-grop col-md-12 mb-1">
+        <label for="endereco">Endereco</label>
+        <input type="text" class="form-control bg-secondary text-white" 
+        id="endereco" name="endereco" [(ngModel)]="cliente.endereco" 
+        required #endereco="ngModel"
+        [class.is-invalid]="!endereco.valid && endereco.touched">
+        <div *ngIf="!endereco.valid && endereco.touched" class="invalid-feedback">
+          CEP e obrigatorio
+        </div>
+      </div>
+    </div>
+      
+    <div class="row bg-dark text-white px-5 py-3 ">
+      <div class="col-md-12 d-flex justify-content-end">
+          <button class="btn btn-outline-danger text-white mr-3" type="button"
+          routerLink="/">Cancelar
+          </button>
+          <button class="btn btn-outline-success text-white" type="submit"
+          [disabled]="!f.valid"
+          >Salvar</button>
+      </div> 
+    </div>
+  </form>
+</div>
+

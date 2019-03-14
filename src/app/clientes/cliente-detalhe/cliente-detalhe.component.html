@@ -1,0 +1,15 @@
+<div id="1">
+  <div>
+    <h4>Detalhes do Cadastro</h4>
+    <p>Nome: {{ cliente.nome }}</p>
+    <p>Email: {{ cliente.email }}</p>
+  </div>
+  <a class="waves-effect waves-light btn"
+  (click) = "editarContato()"
+  >
+  Editar</a>
+  <a class="waves-effect waves-light btn"
+  (click) = "exluirContato()"
+  >
+  Excluir</a>
+</div>

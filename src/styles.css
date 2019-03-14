@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.login {
+    background-color: #547095;
+    background-image: url(assets/img/login_bg.png)
+}
